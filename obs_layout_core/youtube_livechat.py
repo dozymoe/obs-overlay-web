@@ -30,9 +30,11 @@ class YoutubeLiveChat(GoogleAuth):
     def youtube_livechat_messages(self):
         self.fetch_youtube_livechat_messages()
 
-        while len(self.youtube_chat_messages) > self.youtube_chat_last_position:
-            yield self.youtube_chat_messages[self.youtube_chat_last_position]
+        if len(self.youtube_chat_messages) > self.youtube_chat_last_position:
+            item = self.youtube_chat_messages[self.youtube_chat_last_position]
             self.youtube_chat_last_position += 1
+            return item
+        return None
 
 
     async def google_oauth_callback_success(self, request):
@@ -71,7 +73,7 @@ class YoutubeLiveChat(GoogleAuth):
                     'publishedAt': datetime.now(),
                 },
                 'authorDetails': {
-                    'channelId': fake.barcode(),
+                    'channelId': uuid4().hex,
                     'channelUrl': fake.url(),
                     'displayName': fake.name(),
                     'profileImageUrl': fake.image_url(),

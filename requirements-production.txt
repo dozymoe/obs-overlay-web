@@ -1,5 +1,7 @@
 aiogoogle
+faker
 jinja2
 python-dateutil
 starlette
 uvicorn
+websockets

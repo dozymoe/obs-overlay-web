@@ -43,10 +43,9 @@ class Example(Application, YoutubeLiveChat):
     async def websocket_index(self, websocket):
         await websocket.accept()
         try:
-            while True:
-                for item in self.youtube_livechat_messages():
-                    if item['snippet']['type'] != 'textMessageEvent':
-                        continue
+            while True
+                item = self.youtube_livechat_messages()
+                if item and item['snippet']['type'] == 'textMessageEvent':
                     js_item = {
                         'id': item['etag'],
                         'author': item['authorDetails']['displayName'],

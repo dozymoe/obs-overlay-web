@@ -1,6 +1,5 @@
 -r requirements-production.txt
 
-faker
 grpcio-tools
 pybuildtool
 pylint
