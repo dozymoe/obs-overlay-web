@@ -1,0 +1,45 @@
+/etc/runner.json
+/tmp/
+/var/
+
+
+## test_project
+
+/etc/runner-development.json
+/build-development.yml
+/package-development.json
+/requirements-development.txt
+/wscript-development
+
+
+## git
+
+*.orig
+
+
+## nodejs
+
+/node_modules/
+/package.json
+/yarn.lock
+
+
+## pybuildtool
+
+/.BUILD/
+/wscript
+/.lock-waf*
+/build.yml
+
+
+## python
+
+*.pyc
+/.virtualenv/
+/python_modules
+/requirements.txt
+
+
+## vim
+
+*.sw[op]

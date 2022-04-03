@@ -1,0 +1,46 @@
+example_project:
+  css:
+    sass:
+      shell:
+        options:
+          command: >
+            node_modules/sass/sass.js -Inode_modules
+            {_1}/sass/index.scss
+            tmp/{_1}-index-compiled.css
+        raw_depend_in:
+          - package.json
+          - "{_1}/sass/**/*.scss"
+        raw_extra_out: tmp/{_1}-index-compiled.css
+
+    postcss:
+      shell:
+        options:
+          command: >
+            node_modules/postcss-cli/index.js --use autoprefixer -m
+            -b 'last 10 version'
+            tmp/{_1}-index-compiled.css
+            -o tmp/{_1}-index-prefixed.css
+        rule_in: "{_1}/{_2}/sass/shell"
+        raw_extra_out:
+          - tmp/{_1}-index-prefixed.css
+          - tmp/{_1}-index-prefixed.css.map
+
+    map:
+      cp:
+        rule_in: "{_1}/{_2}/postcss/shell"
+        raw_file_in: tmp/{_1}-index-prefixed.css.map
+        raw_file_out: "{_1}/static/css/app.css.map"
+
+    cp:
+      rule_in: "{_1}/{_2}/postcss/shell"
+      raw_file_in: tmp/{_1}-index-prefixed.css
+      raw_file_out: "{_1}/static/css/app.css"
+
+
+  js:
+    cp:
+      raw_file_in:
+        - "{_1}/javascript/homepage.js"
+        - node_modules/lodash/lodash.min.js
+        - node_modules/mithril/mithril.min.js
+      raw_file_out: "{_1}/static/js/"

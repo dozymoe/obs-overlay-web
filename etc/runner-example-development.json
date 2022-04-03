@@ -1,0 +1,35 @@
+{
+    "modules": [
+        "lib.fireh_runner.modules.setup",
+        "lib.fireh_runner.modules.python",
+        "lib.fireh_runner.modules.virtualenv",
+        "lib.fireh_runner.modules.waf",
+        "lib.fireh_runner.modules.project"
+    ],
+    "setup_modules": [
+        "lib.fireh_runner.setup_modules.python",
+        "lib.fireh_runner.setup_modules.yarn",
+        "lib.fireh_runner.setup_modules.pybuildtool"
+    ],
+    "default_project": "example_project",
+    "default_variant": "demo",
+
+    "python_version": "3.9",
+    "waf_version": "2.0.23",
+
+    "configuration": {
+        "demo": {
+            "example_project": {
+                "shell_env": {
+                    "GOOGLE_API_KEY": "yMRqdfcoUqFtTChnUcasCdfKdUWbE9gt",
+                    "GOOGLE_CLIENT_ID": "RK3XhipamkA3oMtopNrouqNsJvnqg3XT.apps.googleusercontent.com",
+                    "GOOGLE_CLIENT_SECRET": "xCTRgz9jYpfcVvwvhsFHXgdphRcMuUWt",
+                    "CHANNEL_ID": "FRet4oHRfJKenfTg4uvo4A7Ac4TWbUUL",
+
+                    "LISTEN_ADDR": "127.0.0.1",
+                    "LISTEN_PORT": "8282"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes background-move {
+  from {
+    background-position: 0 -28px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes background-move {
+  from {
+    background-position: 0 -28px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+body.homepage #wrapper {
+  background-color: #efead4;
+  -webkit-animation: background-move 5s ease-out;
+          animation: background-move 5s ease-out;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+body.homepage #picture-frame {
+  background-color: black;
+  height: 200px;
+  right: 10px;
+  opacity: 70%;
+  bottom: 10px;
+  width: 200px;
+  position: absolute;
+}
+
+body.homepage .chat-messages {
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 220px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  justify-content: flex-end;
+  list-style: none;
+  right: 10px;
+  overflow: hidden;
+  padding: 0.2em;
+  position: absolute;
+  top: 10%;
+  width: 300px;
+}
+
+body.homepage .chat-messages strong {
+  margin-right: 0.4em;
+}
+
+body.homepage .chat-messages::before {
+  background: linear-gradient(#efead4, transparent);
+  content: "";
+  height: 1.5em;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+body.homepage .chat-messages strong::after {
+  content: ":";
+}
+
+/*# sourceMappingURL=example-index-prefixed.css.map */
